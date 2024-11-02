@@ -1,0 +1,592 @@
+Jack@Deviack MINGW64 ~
+$ mkdir workspace
+
+Jack@Deviack MINGW64 ~
+$ pwd
+/c/Users/Jack
+
+Jack@Deviack MINGW64 ~
+$ cd workspace/
+
+Jack@Deviack MINGW64 ~/workspace
+$ ls
+
+Jack@Deviack MINGW64 ~/workspace
+$ ls
+
+Jack@Deviack MINGW64 ~/workspace
+$ mkdir myweb
+
+Jack@Deviack MINGW64 ~/workspace
+$ ls
+myweb/
+
+Jack@Deviack MINGW64 ~/workspace
+$ cd myweb/
+
+Jack@Deviack MINGW64 ~/workspace/myweb
+$ git init
+Initialized empty Git repository in C:/Users/Jack/workspace/myweb/.git/
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ ls
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ ls -a
+./  ../  .git/
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$  code .
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git add file1.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git add file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file2.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git add file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git commit -m "commit inicial"
+[main (root-commit) e41a518] commit inicial
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git add file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file2.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git commit
+[main 7bb53ff] agregando un chanchito feliz
+ 1 file changed, 1 insertion(+)
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ ls
+file1.txt  file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ rm file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git add file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file2.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git commit -m "eliminado el archivo file2.txt"
+[main 2f7d927] eliminado el archivo file2.txt
+ 1 file changed, 2 deletions(-)
+ delete mode 100644 file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ ls
+file1.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git rm file2.txt
+fatal: pathspec 'file2.txt' did not match any files
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git rm file1.txt
+rm 'file1.txt'
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    file1.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git restore --staged file1.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    file1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ ls
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git restore file1.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ ls
+file1.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ gity status
+bash: gity: command not found
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ mv file1.txt file.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ ls
+file.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    file1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git add file1.txt file.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    file1.txt -> file.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git commit -m "renombrando archivo"
+[main 6f217ce] renombrando archivo
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename file1.txt => file.txt (100%)
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git mv file.txt file1.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    file.txt -> file1.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git commit -m "devolviendo nombre del archivo"
+[main 2743617] devolviendo nombre del archivo
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename file.txt => file1.txt (100%)
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .env
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git add .gitignore
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git commit -m "agregando archivo -gitignore- "
+[main ce7f4c7] agregando archivo -gitignore-
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status -s
+ M file1.txt
+?? file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git add file1.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status -s
+M  file1.txt
+?? file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git add file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status -s
+M  file1.txt
+A  file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git commit -m "mostrando estatus corto"
+[main b14e9a9] mostrando estatus corto
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git diff
+diff --git a/file2.txt b/file2.txt
+index 030b241..6fa3fb4 100644
+--- a/file2.txt
++++ b/file2.txt
+@@ -1 +1,3 @@
+-chanchito feliz
+\ No newline at end of file
++chanchito feliz
++chanchito triste
++chanchito
+\ No newline at end of file
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git add file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git diff
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git diff
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git diff --staged
+diff --git a/file2.txt b/file2.txt
+index 030b241..6fa3fb4 100644
+--- a/file2.txt
++++ b/file2.txt
+@@ -1 +1,3 @@
+-chanchito feliz
+\ No newline at end of file
++chanchito feliz
++chanchito triste
++chanchito
+\ No newline at end of file
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file2.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git log ..oneline
+fatal: ambiguous argument '..oneline': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git log --oneline
+b14e9a9 (HEAD -> main) mostrando estatus corto
+ce7f4c7 agregando archivo -gitignore-
+2743617 devolviendo nombre del archivo
+6f217ce renombrando archivo
+2f7d927 eliminado el archivo file2.txt
+7bb53ff agregando un chanchito feliz
+e41a518 commit inicial
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ it status
+bash: it: command not found
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file2.txt
+
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git restore --staged file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git restore file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git status -s
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git branch
+* main
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git checkout -b ramab
+Switched to a new branch 'ramab'
+
+Jack@Deviack MINGW64 ~/workspace/myweb (ramab)
+$ git branch
+  main
+* ramab
+
+Jack@Deviack MINGW64 ~/workspace/myweb (ramab)
+$ git status
+On branch ramab
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Jack@Deviack MINGW64 ~/workspace/myweb (ramab)
+$ git add file2.txt
+
+Jack@Deviack MINGW64 ~/workspace/myweb (ramab)
+$ git commit -m "actualizando file2.txt"
+[ramab 8faee60] actualizando file2.txt
+ 1 file changed, 1 insertion(+)
+
+Jack@Deviack MINGW64 ~/workspace/myweb (ramab)
+$ git log --oneline
+8faee60 (HEAD -> ramab) actualizando file2.txt
+b14e9a9 (main) mostrando estatus corto
+ce7f4c7 agregando archivo -gitignore-
+2743617 devolviendo nombre del archivo
+6f217ce renombrando archivo
+2f7d927 eliminado el archivo file2.txt
+7bb53ff agregando un chanchito feliz
+e41a518 commit inicial
+
+Jack@Deviack MINGW64 ~/workspace/myweb (ramab)
+$ cat file2.txt
+chanchito feliz
+chanchito feliz
+Jack@Deviack MINGW64 ~/workspace/myweb (ramab)
+$ git checkout main
+Switched to branch 'main'
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ cat file2.txt
+chanchito feliz
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git merge ramab
+Updating b14e9a9..8faee60
+Fast-forward
+ file2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ cat file2.txt
+chanchito feliz
+chanchito feliz
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git remote add origin https://github.com/Jack247R/myweb.git
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git push -u origin main
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/Jack247R/myweb.git/'
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git remote add origin https://github.com/Jack247R/myweb.git
+error: remote origin already exists.
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git push -u origin main
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (18/18), 1.71 KiB | 877.00 KiB/s, done.
+Total 18 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/Jack247R/myweb.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git remote add origin https://github.com/Jack247R/myweb.git
+error: remote origin already exists.
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+
+Jack@Deviack MINGW64 ~/workspace/myweb (main)
+$ clear
